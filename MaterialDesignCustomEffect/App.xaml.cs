@@ -1,4 +1,8 @@
-﻿using System;
+﻿using MaterialDesignCustomEffect.Views;
+using Prism.Ioc;
+using Prism.Modularity;
+using Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -11,7 +15,24 @@ namespace MaterialDesignCustomEffect
     /// <summary>
     /// App.xaml の相互作用ロジック
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
+        protected override Window CreateShell()
+        {
+            return Container.Resolve<MainWindow>();
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<ComboBoxCombinationView>();
+        }
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+
+            var regionMan = Container.Resolve<IRegionManager>();
+            regionMan.RegisterViewWithRegion("MainRegion", typeof(ComboBoxCombinationView));
+        }
     }
 }
