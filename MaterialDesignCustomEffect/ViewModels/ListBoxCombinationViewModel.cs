@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace MaterialDesignCustomEffect.ViewModels
 {
-    public class ComboBoxCombinationViewModel : BindableBase
+    public class ListBoxCombinationViewModel : BindableBase
     {
         public List<string> Fruits { get; }
 
@@ -17,7 +17,7 @@ namespace MaterialDesignCustomEffect.ViewModels
             set { SetProperty(ref _selectedFruit, value); }
         }
 
-        public ComboBoxCombinationViewModel()
+        public ListBoxCombinationViewModel()
         {
             Fruits = new List<string>()
             {

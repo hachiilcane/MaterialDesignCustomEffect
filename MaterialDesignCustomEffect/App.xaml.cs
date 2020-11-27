@@ -24,7 +24,7 @@ namespace MaterialDesignCustomEffect
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<ComboBoxCombinationView>();
+            containerRegistry.RegisterForNavigation<ListBoxCombinationView>();
         }
 
         protected override void OnInitialized()
@@ -32,7 +32,7 @@ namespace MaterialDesignCustomEffect
             base.OnInitialized();
 
             var regionMan = Container.Resolve<IRegionManager>();
-            regionMan.RegisterViewWithRegion("MainRegion", typeof(ComboBoxCombinationView));
+            regionMan.RegisterViewWithRegion("MainRegion", typeof(ListBoxCombinationView));
         }
     }
 }

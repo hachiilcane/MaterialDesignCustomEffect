@@ -3,11 +3,11 @@
 namespace MaterialDesignCustomEffect.Views
 {
     /// <summary>
-    /// Interaction logic for ComboBoxCombinationView
+    /// Interaction logic for ListBoxCombinationView
     /// </summary>
-    public partial class ComboBoxCombinationView : UserControl
+    public partial class ListBoxCombinationView : UserControl
     {
-        public ComboBoxCombinationView()
+        public ListBoxCombinationView()
         {
             InitializeComponent();
         }
