@@ -11,24 +11,34 @@ namespace MaterialDesignCustomEffect.Views
 {
     public class SelectedEffectBehavior : Behavior<TextBox>
     {
+        private RippleAdorner _rippleAdorner;
+
         protected override void OnAttached()
         {
             base.OnAttached();
 
             AssociatedObject.TextChanged += AssociatedObject_TextChanged;
+            AssociatedObject.Loaded += AssociatedObject_Loaded;
         }
 
         protected override void OnDetaching()
         {
-            base.OnDetaching();
-
             AssociatedObject.TextChanged -= AssociatedObject_TextChanged;
+            AssociatedObject.Loaded -= AssociatedObject_Loaded;
+
+            base.OnDetaching();
+        }
+
+        private void AssociatedObject_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            _rippleAdorner = new RippleAdorner(AssociatedObject);
+            var myAdornerLayer = AdornerLayer.GetAdornerLayer(AssociatedObject);
+            myAdornerLayer.Add(_rippleAdorner);
         }
 
         private void AssociatedObject_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var myAdornerLayer = AdornerLayer.GetAdornerLayer(AssociatedObject);
-            myAdornerLayer.Add(new RippleAdorner(AssociatedObject));
+            _rippleAdorner.DoRipple();
         }
     }
 }

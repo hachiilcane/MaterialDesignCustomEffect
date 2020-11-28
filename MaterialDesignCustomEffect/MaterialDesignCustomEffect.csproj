@@ -110,6 +110,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\ListBoxCombinationViewModel.cs" />
+    <Compile Include="Views\ExecutableRipple.cs" />
     <Compile Include="Views\ListBoxCombinationView.xaml.cs">
       <DependentUpon>ListBoxCombinationView.xaml</DependentUpon>
     </Compile>

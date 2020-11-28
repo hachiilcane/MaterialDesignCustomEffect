@@ -6,6 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:MaterialDesignCustomEffect.Views"
              xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:wpf="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800"
              prism:ViewModelLocator.AutoWireViewModel="True">
@@ -16,6 +17,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0"
                     MinWidth="300">
+            
             <TextBox Margin="5"
                  Text="{Binding SelectedFruit}"
                  IsReadOnly="True"
@@ -24,6 +26,21 @@
                     <local:SelectedEffectBehavior />
                 </Behaviors:Interaction.Behaviors>
             </TextBox>
+
+            <Border x:Name="border" Margin="5"
+                    BorderBrush="Black" BorderThickness="1">
+                <wpf:Ripple Focusable="False" Feedback="Black">
+                    <TextBlock Text="wpf:Ripple" />
+                    <wpf:Ripple.Clip>
+                        <MultiBinding Converter="{StaticResource BorderClipConverter}">
+                            <Binding ElementName="border" Path="ActualWidth" />
+                            <Binding ElementName="border" Path="ActualHeight" />
+                            <Binding ElementName="border" Path="CornerRadius" />
+                            <Binding ElementName="border" Path="BorderThickness" />
+                        </MultiBinding>
+                    </wpf:Ripple.Clip>
+                </wpf:Ripple>
+            </Border>
         </StackPanel>
 
         <GroupBox Header="Select" Grid.Column="1">
