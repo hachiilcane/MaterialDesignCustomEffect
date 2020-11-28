@@ -115,7 +115,7 @@
       <DependentUpon>ListBoxCombinationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RippleAdorner.cs" />
-    <Compile Include="Views\SelectedEffectBehavior.cs" />
+    <Compile Include="Views\TextChangedEffectBehavior.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

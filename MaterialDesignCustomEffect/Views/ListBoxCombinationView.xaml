@@ -23,7 +23,7 @@
                  IsReadOnly="True"
                   >
                 <Behaviors:Interaction.Behaviors>
-                    <local:SelectedEffectBehavior />
+                    <local:TextChangedEffectBehavior />
                 </Behaviors:Interaction.Behaviors>
             </TextBox>
 

@@ -9,7 +9,7 @@ using System.Windows.Documents;
 
 namespace MaterialDesignCustomEffect.Views
 {
-    public class SelectedEffectBehavior : Behavior<TextBox>
+    public class TextChangedEffectBehavior : Behavior<TextBox>
     {
         private RippleAdorner _rippleAdorner;
 
