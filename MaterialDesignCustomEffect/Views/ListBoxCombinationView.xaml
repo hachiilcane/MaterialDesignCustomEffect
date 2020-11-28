@@ -4,6 +4,8 @@
              xmlns:prism="http://prismlibrary.com/"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MaterialDesignCustomEffect.Views"
+             xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800"
              prism:ViewModelLocator.AutoWireViewModel="True">
@@ -17,7 +19,11 @@
             <TextBox Margin="5"
                  Text="{Binding SelectedFruit}"
                  IsReadOnly="True"
-                  />
+                  >
+                <Behaviors:Interaction.Behaviors>
+                    <local:SelectedEffectBehavior />
+                </Behaviors:Interaction.Behaviors>
+            </TextBox>
         </StackPanel>
 
         <GroupBox Header="Select" Grid.Column="1">
