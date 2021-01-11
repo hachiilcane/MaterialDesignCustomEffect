@@ -35,6 +35,14 @@
                     <local:TextChangedEffectBehavior />
                 </Behaviors:Interaction.Behaviors>
             </TextBox>
+
+            <TextBlock Margin="5"
+                 Text="{Binding SelectedFruit}"
+                  >
+                <Behaviors:Interaction.Behaviors>
+                    <local:TextSourcePropertyChangedEffectBehavior />
+                </Behaviors:Interaction.Behaviors>
+            </TextBlock>
             
             <Border x:Name="border" Margin="5"
                     BorderBrush="Black" BorderThickness="1">
